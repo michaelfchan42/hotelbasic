@@ -16,54 +16,10 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="style.css">
-
-	<script type="text/JavaScript">
-        function addHotel(){
-            var hotel = document.getElementById("hotel").value;
-            
-
-            var row = document.createElement("div");
-            row.setAttribute("class","row row-hotel");
-            row.setAttribute("id",hotel + "-row");
-			row.setAttribute("style","")
-
-			var hotel_text = document.createElement("span");
-			hotel_text.setAttribute("id",hotel);
-			hotel_text.setAttribute("style","float: left; padding-top: 4%")
-			var node = document.createTextNode(hotel);
-			hotel_text.appendChild(node);
-			var button = document.createElement("BUTTON");
-			button.onclick = function() {
-								var element = document.getElementById(hotel);
-								element.parentNode.removeChild(element);
-								var element = document.getElementById(hotel+"-btn");
-								element.parentNode.removeChild(element);
-								var element = document.getElementById(hotel+"-row");
-								element.parentNode.removeChild(element);
-							}
-			button.setAttribute("class", "btn btn-default");
-			button.setAttribute("id", hotel + "-btn");
-			button.setAttribute("style", "color: red;")
-			button.innerHTML = 'X';
-
-			var col1 = document.createElement("div");
-            col1.setAttribute("class","col-md-1 col-md-offset-5");
-            col1.appendChild(button);
-            var col2 = document.createElement("div");
-            col2.setAttribute("class","col-md-2");
-            col2.appendChild(hotel_text)
+	<script src="addHotel.js"></script>
+	
 
 
-			var element = document.getElementById("hotel-display");
-			element.appendChild(row);
-
-			row.appendChild(col1);
-			row.appendChild(col2);
-			
-        }
-
-
-    </script>
 </head>
 
 <body id="formbody">
@@ -72,17 +28,17 @@
 		
 		<div class="row" id="row-centered">
 			<div class="col-md">	
-				<form>
+				
 					<input name="hotel" id="hotel" type="text" class="btn btn-default" placeholder="Enter hotel name" required>
-					<input type="button" class="btn btn-default" onclick="addHotel()" value="submit">
-				</form>
+					<button type="button" id="enterbtn" class="btn btn-default" onclick="addHotel()">submit</button>
+				
 			</div>
 		</div>
 		
-		<div class="row" >
-			<!-- Div for hotel display -->
-		</div>
+		
 		
 	</div>	
+
+	<script src="enterListener.js"></script>
 </body>
 </html>	
