@@ -2,13 +2,12 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+	<meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>The HTML5 Herald</title>
+	<meta name="description" content="The HTML5 Herald">
+	<meta name="author" content="SitePoint">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -17,26 +16,70 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script type="text/JavaScript">
+        function addHotel(){
+            var hotel = document.getElementById("hotel").value;
+            
+
+            var row = document.createElement("div");
+            row.setAttribute("class","row row-hotel");
+			row.setAttribute("style","")
+
+			var hotel_text = document.createElement("span");
+			hotel_text.setAttribute("id",hotel);
+			hotel_text.setAttribute("style","float: left; padding-top: 4%")
+			var node = document.createTextNode(hotel);
+			hotel_text.appendChild(node);
+			var button = document.createElement("BUTTON");
+			button.onclick = function() {
+								var element = document.getElementById(hotel);
+								element.parentNode.removeChild(element);
+								var element = document.getElementById(hotel+"-btn");
+								element.parentNode.removeChild(element);
+							}
+			button.setAttribute("class", "btn btn-default");
+			button.setAttribute("id", hotel + "-btn");
+			button.setAttribute("style", "color: red;")
+			button.innerHTML = 'X';
+
+			var col1 = document.createElement("div");
+            col1.setAttribute("class","col-md-1 col-md-offset-5");
+            col1.appendChild(button);
+            var col2 = document.createElement("div");
+            col2.setAttribute("class","col-md-2");
+            col2.appendChild(hotel_text)
+
+
+			var element = document.getElementById("hotel-display");
+			element.appendChild(row);
+
+			row.appendChild(col1);
+			row.appendChild(col2);
+			
+        }
+
+
+    </script>
 </head>
 
 <body id="formbody">
 
-	<div class="container-fluid">
+	<div class="container" id="hotel-display">
+		
 		<div class="row" id="row-centered">
-			<div class="col">	
-				<form action="/search/1" method="get" style="margin-top: 100px;">
-					<input name="keyword" type="text" class="ghost-input" placeholder="Enter hotel name" required>
-					<input type="submit" class="ghost-button" value="Search" style="margin-top: 30px;
-          border-radius: 30px;">
+			<div class="col-md" id="col-centered">	
+				<form>
+					<input name="hotel" id="hotel" type="text" class="btn btn-default" placeholder="Enter hotel name" required>
+					<input type="button" class="btn btn-default" onclick="addHotel()" value="submit">
 				</form>
-		</div>
-		<div class="row">
-			<div class="col">
-				<button class="btn btn-default">hsdddddddddddddddddddd</button> 
-				<button class="btn btn-success">hsdddddddddddddddddddd</button> 
-				<button class="lol">ASDSADASDA</button>
 			</div>
 		</div>
+		
+		<div class="row" >
+			<!-- Div for hotel display -->
+		</div>
+		
 	</div>	
 </body>
 </html>	

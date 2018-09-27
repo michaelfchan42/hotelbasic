@@ -1,10 +1,25 @@
 
-#formbody{
-	background: black;
-
+/* centered columns styles */
+#row-centered {
+text-align:center;
+}
+#col-centered {
+display:inline-block;
+float:none;
+/* reset the text-align */
+text-align:left;
+/* inline-block space fix */
+margin-right:-4px;
 }
 
-.lol {
-	border-radius: 30px;
+.container{
+	display: flex;
+	min-height: 90vh;
+	justify-content: center;
+	
+	flex-direction: column;
+}
 
+.row-hotel{
+	padding: 10px;
 }
