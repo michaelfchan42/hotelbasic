@@ -24,6 +24,7 @@
 
             var row = document.createElement("div");
             row.setAttribute("class","row row-hotel");
+            row.setAttribute("id",hotel + "-row");
 			row.setAttribute("style","")
 
 			var hotel_text = document.createElement("span");
@@ -36,6 +37,8 @@
 								var element = document.getElementById(hotel);
 								element.parentNode.removeChild(element);
 								var element = document.getElementById(hotel+"-btn");
+								element.parentNode.removeChild(element);
+								var element = document.getElementById(hotel+"-row");
 								element.parentNode.removeChild(element);
 							}
 			button.setAttribute("class", "btn btn-default");
@@ -68,7 +71,7 @@
 	<div class="container" id="hotel-display">
 		
 		<div class="row" id="row-centered">
-			<div class="col-md" id="col-centered">	
+			<div class="col-md">	
 				<form>
 					<input name="hotel" id="hotel" type="text" class="btn btn-default" placeholder="Enter hotel name" required>
 					<input type="button" class="btn btn-default" onclick="addHotel()" value="submit">
