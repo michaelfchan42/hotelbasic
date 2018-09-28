@@ -2,13 +2,12 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+	<meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>Hotel</title>
+	<meta name="description" content="Hotel form">
+	<meta name="author" content="FuChouMichaelHan">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -16,27 +15,28 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script src="./js/addHotel.js"></script>
+	
+
+
 </head>
 
 <body id="formbody">
 
-	<div class="container-fluid">
+	<div class="container" id="hotel-display">
+		
 		<div class="row" id="row-centered">
-			<div class="col">	
-				<form action="/search/1" method="get" style="margin-top: 100px;">
-					<input name="keyword" type="text" class="ghost-input" placeholder="Enter hotel name" required>
-					<input type="submit" class="ghost-button" value="Search" style="margin-top: 30px;
-          border-radius: 30px;">
-				</form>
-		</div>
-		<div class="row">
-			<div class="col">
-				<button class="btn btn-default">hsdddddddddddddddddddd</button> 
-				<button class="btn btn-success">hsdddddddddddddddddddd</button> 
-				<button class="lol">ASDSADASDA</button>
+			<div class="col-md">	
+				
+					<input name="hotel" id="hotel" type="text" class="btn btn-default" placeholder="Enter hotel name" required>
+					<button type="button" id="enterbtn" class="btn btn-dark" onclick="addHotel()">submit</button>
+				
 			</div>
 		</div>
+		
 	</div>	
+
+	<script src="./js/enterListener.js"></script>
 </body>
 </html>	

@@ -1,0 +1,14 @@
+#row-centered {
+text-align:center;
+}
+
+.container{
+	display: flex;
+	min-height: 90vh;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.row-hotel{
+	padding: 10px;
+}
